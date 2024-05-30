@@ -1,0 +1,110 @@
+<body>
+  <div class="container">
+  <mat-card>
+    <h1 align="center">Personal Info</h1>
+    <form [formGroup]="form" (submit)="onSaveProfile()" >
+    <!-- name -->
+      <mat-form-field>
+        <mat-label>Student Name</mat-label>
+        <input required matInput type="text" formControlName="student_name" placeholder="Enter your name">
+        <mat-error *ngIf="form.get('student_name').invalid">Please enter a Name.</mat-error>
+      </mat-form-field>
+
+
+    <!-- parent name -->
+    <mat-form-field>
+      <mat-label>Parent Name</mat-label>
+      <input required matInput type="text" formControlName="parent_name" placeholder="Enter your parent name">
+      <mat-error *ngIf="form.get('parent_name').invalid">Please enter a Name.</mat-error>
+    </mat-form-field>
+
+
+    <!-- Gender -->
+    <mat-label>Gender:</mat-label>
+      <br>
+        <mat-radio-group required aria-label="Select an option" formControlName="gender"  >
+          <mat-radio-button value="male">Male</mat-radio-button>
+          <mat-radio-button value="female">Female</mat-radio-button>
+          <mat-error *ngIf="form.get('gender').invalid">Please select one .</mat-error>
+        </mat-radio-group>
+
+
+    <!-- Email -->
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input required matInput type="text" formControlName="email" placeholder="Ex:- abc@gmail.com">
+      <mat-error *ngIf="form.get('email').invalid">Please enter a  email.</mat-error>
+    </mat-form-field>
+
+    <!-- Education-Status -->
+    <mat-form-field>
+      <mat-label>Education Status</mat-label>
+      <mat-select required formControlName="education_status" >
+        <mat-option value="10" >10Th</mat-option>
+        <mat-option value="intermediate" >Intermediate</mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('education_status').invalid">Please enter Education status.</mat-error>
+    </mat-form-field>
+
+    <!-- Age -->
+    <mat-form-field>
+      <mat-label>Age</mat-label>
+      <input required matInput type="text" formControlName="age" placeholder="Ex:- 18 ">
+      <mat-error *ngIf="form.get('age').invalid">Please enter a  age.</mat-error>
+    </mat-form-field>
+
+    <!-- education steam -->
+    <mat-form-field>
+      <mat-label>Education Stream</mat-label>
+      <mat-select required  formControlName="education_stream" >
+        <mat-option value="school"  >School</mat-option>
+        <mat-option value="arts">Arts</mat-option>
+        <mat-option value="design">Design</mat-option>
+        <mat-option value="engineering">Science(engineering)</mat-option>
+        <mat-option value="doctor">Science(Doctor)</mat-option>
+        <mat-option value="commerce">Commerce</mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('education_stream').invalid">Please enter Education Stream.</mat-error>
+    </mat-form-field>
+
+    <!-- Coursename -->
+    <mat-form-field>
+      <mat-label>CourseName</mat-label>
+      <input required matInput type="text" formControlName="course_name" placeholder="Ex:- B.tech,B.Sc,etc ">
+      <mat-error *ngIf="form.get('course_name').invalid">Please enter a  Course name.</mat-error>
+    </mat-form-field>
+
+    <!-- College/School name -->
+    <mat-form-field>
+      <mat-label>College/School name</mat-label>
+      <input required matInput type="text" formControlName="name_institute" placeholder="Ex:- Geethanjali College of engineering and technology ">
+      <mat-error *ngIf="form.get('name_institute').invalid">Please enter School/College name.</mat-error>
+    </mat-form-field>
+
+
+    <!-- PhoneNumber -->
+      <mat-form-field>
+        <mat-label>Telephone</mat-label>
+        <span matPrefix>+91 &nbsp;</span>
+        <input required matInput type="text" formControlName="phone_number" placeholder="Ex:- 9998887771 ">
+        <mat-error *ngIf="form.get('phone_number').invalid">Please enter a  Tuition phone number.</mat-error>
+        <mat-hint align="centre"><strong>Enter a 10 digit number </strong> </mat-hint>
+      </mat-form-field>
+
+
+
+    <!-- address -->
+      <mat-form-field >
+        <mat-label >Address</mat-label>
+        <input required matInput type="text" formControlName="address" placeholder="Ex:-3-2-4 abids/hyderabad">
+        <mat-error *ngIf="form.get('address').invalid">Please enter  address.</mat-error>
+      </mat-form-field>
+
+      <br>
+      <div align="center">
+      <button mat-raised-button color="primary" class="btn btn-warning" type="submit">Save Profile</button>
+      </div>
+    </form>
+  </mat-card>
+  </div>
+  </body>

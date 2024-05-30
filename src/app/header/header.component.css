@@ -1,0 +1,21 @@
+
+ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  text-anchor: ivory;
+  text-emphasis-color: initial;
+}
+.spacer{
+  flex:1 1 auto;
+}
+ul{
+  display: flex;
+  word-spacing: normal;
+}

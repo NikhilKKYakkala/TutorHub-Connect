@@ -1,0 +1,76 @@
+
+<body>
+  <div class="container">
+    <mat-card>
+      <h1 align="center">Subject Wise Setup</h1>
+      <form [formGroup]="Subjectwiseform" (submit)="SubjectwiseSetup()">
+
+
+        <!-- TuitionName -->
+      <mat-form-field>
+        <mat-label>TuitionName</mat-label>
+          <input required matInput type="text" formControlName="Tuitionname" placeholder="Tuition Name">
+          <mat-error *ngIf="Subjectwiseform.get('Tuitionname').invalid">Please enter a  TuitionName.</mat-error>
+      </mat-form-field>
+
+
+
+      <!-- Location -->
+          <mat-form-field>
+            <mat-label>Location</mat-label>
+            <mat-select  formControlName="location" >
+              <mat-option value="Ameerpet">Ameerpet</mat-option>
+              <mat-option value="Dilsukhnagar">Dilsukhnagar</mat-option>
+              <mat-option value="JNTU">JNTU</mat-option>
+              <mat-option value="Kukatpally" >Kukatpally</mat-option>
+              <mat-option value="Mehdipatanam">Mehdipatanam</mat-option>
+              <mat-option value="Nallakunta">Nallakunta</mat-option>
+              <mat-option value="Panjagutta">Panjagutta</mat-option>
+              <mat-option value="Secunderabad">Secunderabad</mat-option>
+              <mat-option value="Somajiguda">Somajiguda</mat-option>
+            </mat-select>
+            <mat-error *ngIf="Subjectwiseform.get('location').invalid">Please enter Education status.</mat-error>
+          </mat-form-field>
+
+    <!-- subject -->
+        <mat-form-field>
+          <mat-label>Subjects</mat-label>
+          <mat-select  formControlName="subject" >
+            <mat-option value="BIOLOGY">BIOLOGY</mat-option>
+            <mat-option value="CIVICS">CIVICS</mat-option>
+            <mat-option value="COMMERCE">COMMERCE</mat-option>
+            <mat-option value="ECONOMICS" >ECONOMICS</mat-option>
+            <mat-option value="ENGLISH">ENGLISH</mat-option>
+            <mat-option value="	MATHEMATICS">	MATHEMATICS</mat-option>
+            <mat-option value="PHYSICS">PHYSICS</mat-option>
+            <mat-option value="SOCIAL">SOCIAL</mat-option>
+            <mat-option value="ALLSUBJECT">All SUBJECT</mat-option>
+          </mat-select>
+          <mat-error *ngIf="Subjectwiseform.get('location').invalid">Please enter Education status.</mat-error>
+        </mat-form-field>
+
+
+    <!-- fee -->
+        <mat-form-field>
+          <mat-label>Fee</mat-label>
+          <input required matInput type="text" formControlName="fee" placeholder="subject fee">
+          <mat-error *ngIf="Subjectwiseform.get('fee').invalid">Please enter fee.</mat-error>
+        </mat-form-field>
+
+    <!-- uniquecode -->
+        <mat-form-field>
+          <mat-label>Unqiue Code</mat-label>
+          <input required matInput type="text" formControlName="uniquecode" placeholder="uniquecode">
+          <mat-error *ngIf="Subjectwiseform.get('uniquecode').invalid">Please enter uniquecode.</mat-error>
+        </mat-form-field>
+
+
+    <!-- Button -->
+      <div align="center">
+          <button align="center" mat-raised-button color="primary" class="btn btn-info" type="submit">Save Subject</button>
+      </div>
+
+    </form>
+  </mat-card>
+  </div>
+</body>

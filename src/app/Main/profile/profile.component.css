@@ -1,0 +1,44 @@
+mat-form-field,
+textarea {
+  width: 100%;
+}
+body{
+  background-image:url("../../personal.jpg");
+  background-size: cover;
+}
+.container
+{
+  width: 75%;
+}
+h1{
+  padding-bottom: 30px;
+  font-weight: bolder;
+  font-size: xx-large;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+.jumbotron{
+  width: 75%;
+  opacity: 0.98;
+   filter: alpha(opacity=90);
+   font-weight: bolder;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+
+.image-preview {
+  height: 5rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  height: 100%;
+}
+.bold{
+  font-weight: bolder;
+}

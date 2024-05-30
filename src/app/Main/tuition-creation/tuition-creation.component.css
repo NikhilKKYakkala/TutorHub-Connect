@@ -1,0 +1,33 @@
+mat-form-field,
+textarea {
+  width: 100%;
+}
+h1{
+  padding-bottom: 30px;
+  font-weight: bolder;
+  font-size: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+  background-image:url("../../CreationBackground.jpg");
+  background-size: cover;
+  /* height: 100vh; */
+
+}
+.container{
+  width: 75%;
+  opacity: 70%;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+
+.image-preview {
+  height: 5rem;
+  margin: 1rem 0;
+}
+
+.image-preview img {
+  height: 100%;
+}

@@ -1,0 +1,47 @@
+<div class="padding">
+<div class="example-container mat-elevation-z8 ">
+
+<mat-table [dataSource]="dataSource" >
+
+
+  <!-- Postion column -->
+  <ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef > No. </mat-header-cell>
+    <mat-cell *matCellDef="let element, index as i "> {{i+1}} </mat-cell>
+  </ng-container>
+
+  <!-- Tuitionname Column -->
+  <ng-container matColumnDef="tuitionname">
+    <mat-header-cell *matHeaderCellDef > Tuition Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.tuitionname}} </mat-cell>
+  </ng-container>
+
+  <!-- location Column -->
+  <ng-container matColumnDef="location">
+    <mat-header-cell *matHeaderCellDef > Location </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.location}} </mat-cell>
+  </ng-container>
+
+  <!-- subject Column -->
+  <ng-container matColumnDef="course">
+    <mat-header-cell *matHeaderCellDef > Subject </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.course}} </mat-cell>
+  </ng-container>
+
+  <!-- fee Column -->
+  <ng-container matColumnDef="fee">
+    <mat-header-cell *matHeaderCellDef > Fee </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.fee}} </mat-cell>
+  </ng-container>
+
+  <!-- Status Column -->
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.status}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+</div>
+</div>

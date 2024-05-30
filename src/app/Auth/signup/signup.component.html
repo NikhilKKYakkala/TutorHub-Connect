@@ -1,0 +1,57 @@
+<body>
+
+  <!-- logo -->
+  <div class="logo">
+  </div>
+
+  <!-- <div class="text">
+    <em> Join TuitionWala, a platform for that every student needs. </em>
+  </div> -->
+
+
+  <div id="loginbox">
+    <h1>Sign Up</h1>
+    <form (submit)="onSubmit()" [formGroup]='signupForm' *ngIf="!isLoading">
+      <mat-form-field>
+        <!-- <mat-label>Firstname</mat-label> -->
+        <input matInput formControlName='firstname' type="text" name="firstname"  placeholder="First name" required >
+      </mat-form-field>
+      <mat-form-field>
+        <!-- <mat-label>Lastname</mat-label> -->
+        <input matInput formControlName='lastname' type="text" name="lastname"  placeholder="Last name" required >
+      </mat-form-field>
+      <mat-form-field>
+        <!-- <mat-label>Email</mat-label> -->
+        <input matInput formControlName='email' type="email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" name="email"  placeholder="Email" required>
+        <!-- <input name="email" placeholder="Enter email address"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email"> -->
+        <mat-error *ngIf="signupForm.get('email').invalid">Please enter a valid Email</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <!-- <mat-label>Password</mat-label> -->
+        <input matInput formControlName='password' type="password" name="password"  placeholder="Password" required>
+        <mat-error *ngIf="!signupForm.get('password').valid">Password is required and should be less than 10 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <!-- <mat-label>PhoneNumber</mat-label> -->
+        <input matInput #number formControlName='phoneno' type="text" name="phoneno"  placeholder="Phone Number" required>
+        <mat-error *ngIf="signupForm.get('phoneno').invalid">Please enter a valid phone number</mat-error>
+        <mat-hint align="centre"><strong>Enter a 10 digit number </strong> </mat-hint>
+        <mat-hint align="end">{{number.value.length}} / 10</mat-hint>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>Type</mat-label>
+        <mat-select #type required  formControlName="type" >
+          <mat-option value="Student">Student</mat-option>
+          <mat-option value="Tutor">Tutor/Institute</mat-option>
+        </mat-select>
+        <mat-error *ngIf="signupForm.get('type').invalid">Please pick one</mat-error>
+      </mat-form-field>
+
+
+      <button mat-raised-button color="#fb2525" type="submit" *ngIf="!isLoading">Submit</button>
+    </form>
+  </div>
+
+</body>

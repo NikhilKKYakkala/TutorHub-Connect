@@ -1,0 +1,94 @@
+
+<body>
+<div class="container">
+<mat-card>
+  <h1 align="center">Tuition Setup</h1>
+
+  <form [formGroup]="form" (submit)="onSavePost()" class="example-form" >
+  <!-- Title -->
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input required matInput type="text" formControlName="title" placeholder="Tuition Title">
+      <mat-error *ngIf="form.get('title').invalid">Please enter a Tuition title.</mat-error>
+    </mat-form-field>
+
+  <!-- Content -->
+    <mat-form-field>
+      <mat-label>Content</mat-label>
+      <textarea required #content matInput rows="2" formControlName="content" placeholder="Tuition Content"></textarea>
+      <mat-error *ngIf="form.get('content').invalid">Please enter a Tuition Content.</mat-error>
+      <mat-hint align="centre"><strong>Should be in details </strong> </mat-hint>
+      <mat-hint align="end">{{content.value.length}} /1024</mat-hint>
+    </mat-form-field>
+
+  <!--Sub_content-->
+    <mat-form-field>
+      <mat-label>Sub-Content</mat-label>
+      <textarea required #subcontent matInput rows="1" formControlName="sub_content" placeholder="Tuition Sub-Content"></textarea>
+      <mat-error *ngIf="form.get('sub_content').invalid">Please enter a Tuition sub-content.</mat-error>
+      <mat-hint align="centre"><strong>Don't give completely in details </strong> </mat-hint>
+      <mat-hint align="end">{{subcontent.value.length}} /256</mat-hint>
+    </mat-form-field>
+    <br>
+
+    <!-- No. of Faculty -->
+    <mat-form-field>
+      <mat-label>Number. of Faculty</mat-label>
+      <input required matInput type="number" formControlName="no_of_faculty" placeholder="Ex:- 4-8">
+      <mat-error *ngIf="form.get('no_of_faculty').invalid">Please enter a No. of Faculty.</mat-error>
+    </mat-form-field>
+    <br>
+    <!-- Year of establishment -->
+    <mat-form-field>
+      <mat-label>Years of establishment</mat-label>
+      <input required matInput type="number" formControlName="year_of_establishment" placeholder="Ex:- 2">
+      <mat-error *ngIf="form.get('year_of_establishment').invalid">Please enter no. of years of establishment.</mat-error>
+    </mat-form-field>
+
+
+  <!-- PhoneNumber -->
+    <mat-form-field>
+      <mat-label>Telephone</mat-label>
+      <span matPrefix>+91 &nbsp;</span>
+      <input required #number matInput type="text" formControlName="phonenumber" placeholder="Ex:- 9998887771 ">
+      <mat-error *ngIf="form.get('phonenumber').invalid">Please enter a  Tuition phone number.</mat-error>
+      <mat-hint align="centre"><strong>Enter a 10 digit number </strong> </mat-hint>
+      <mat-hint align="end">{{number.value.length}} / 10</mat-hint>
+    </mat-form-field>
+
+  <!-- Email -->
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input required matInput type="text" formControlName="email" placeholder="Ex:- abc@gmail.com">
+      <mat-error *ngIf="form.get('email').invalid">Please enter a Tuition email.</mat-error>
+    </mat-form-field>
+
+  <!-- Website -->
+    <mat-form-field>
+      <mat-label>Website</mat-label>
+      <input required matInput type="text" formControlName="website" placeholder="Ex:-www.abc.com">
+      <mat-error *ngIf="form.get('website').invalid">Please enter a Tuition website.</mat-error>
+    </mat-form-field>
+
+      <!-- Address -->
+    <mat-form-field>
+      <mat-label>Address</mat-label>
+      <input required matInput type="text" formControlName="address" placeholder="Ex:- 3-5-54 ramkote hyderabad">
+      <mat-error *ngIf="form.get('address').invalid">Please enter a Tuition address.</mat-error>
+    </mat-form-field>
+  <!-- IMAGE -->
+    <div>
+      <button mat-stroked-button type="button" (click)="filePicker.click()">Pick Image</button>
+      <input type="file" #filePicker (change)="onImagepicked($event)">
+    </div>
+    <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+      <img [src]="imagePreview" [alt]="form.value.title">
+    </div>
+
+    <br>
+
+    <button mat-raised-button color="accent" type="submit">Save Post</button>
+  </form>
+</mat-card>
+</div>
+</body>

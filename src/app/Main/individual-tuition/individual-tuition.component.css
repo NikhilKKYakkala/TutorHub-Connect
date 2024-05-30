@@ -1,0 +1,28 @@
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+mat-spinner {
+  margin: auto;
+}
+
+.jumbotron{
+  opacity: 1;
+   filter: alpha(opacity=100);
+   align-content: center;
+   align-items: center;
+   /* text-align: center; */
+   margin-left: 100px;
+   margin-right: 100px;
+}
+body{
+  filter: alpha(opacity=70);
+}
+h1{
+  font-size: xx-large;
+  font-weight: inherit;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

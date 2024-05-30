@@ -1,0 +1,37 @@
+body{
+  background-image:url("../../mainpage.jpg");
+  background-size: cover;
+  height: 91.5vh;
+
+}
+
+.jumbotron{
+   opacity: .8;
+   filter: alpha(opacity=70);
+   font-weight: bolder;
+   /* height: 700px; */
+   align-content: center;
+   align-items: center;
+   text-align: center;
+   height: 86vh;
+
+}
+
+p{
+  padding-top: 70px;
+  color: black;
+  font-size: 30px;
+  word-spacing: 2px;
+}
+
+.tuition{
+padding-top: 60px;
+font-weight: 400;
+font-size: 25px;
+}
+
+h1{
+  padding-bottom: 30px;
+  font-weight: bolder;
+  font-size: 50px;
+}

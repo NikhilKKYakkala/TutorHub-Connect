@@ -1,0 +1,20 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="jumbotron" *ngIf="Tuition">
+  <div class="container">
+    <h1> <b>{{Tuition.title}}</b></h1>
+      <b><img  class="center" [src]="Tuition.imagePath" alt="" width=200px height=200px></b>
+      <p>
+         {{Tuition.content}}</p>
+      <ul>
+        <p><b><u>More details about Us:-</u></b></p>
+        <li>Number of faculty: {{Tuition.no_of_faculty}}</li>
+        <li>years of establishment:- {{Tuition.year_of_establishment}}</li>
+        <li>Email us : {{Tuition.email}}</li>
+        <li>Call us on: {{Tuition.phonenumber}}</li>
+        <li>ADDRESS:-</li>{{Tuition.address}}
+      </ul>
+    <p></p>
+    <p></p>
+    <p align=right><a class="btn btn-dark" [routerLink]='["/Institute"]' data-toggle="button" aria-pressed="false" >Back</a></p>
+    </div>
+  </div>

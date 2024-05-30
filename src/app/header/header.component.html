@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <mat-toolbar  >
+    <span>TuitionWala</span>
+    <span class="spacer"></span>
+      <ul >
+        <!-- without login display -->
+        <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/" routerLinkActive="mat-primary">Home</a></li>
+        <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/Login" routerLinkActive="mat-primary">Login</a></li>
+        <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/Signup" routerLinkActive="mat-primary">Signup</a></li>
+        <!-- <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="#" routerLinkActive="mat-primary">Contact Us</a></li> -->
+
+        <!-- Login Display -->
+          <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/Home" routerLinkActive="mat-primary">Home</a></li>
+          <!-- <li *ngIf="userIsAuthenticated"><a mat-button routerLink="#" routerLinkActive="mat-primary">Profile</a></li> -->
+          <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/Institute" routerLinkActive="mat-primary">Institute</a></li>
+          <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/Enrollhere" routerLinkActive="mat-primary">Enroll here</a></li>
+          <li *ngIf="userIsAuthenticated"><a mat-button routerLink="/Status" routerLinkActive="mat-primary">Enrollement Status</a></li>
+          <li *ngIf="userIsAuthenticated"><button (click)="onLogout()" mat-button routerLink="/Home">Logout</button></li>
+      </ul>
+  </mat-toolbar>
+

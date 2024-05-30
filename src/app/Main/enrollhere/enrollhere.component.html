@@ -1,0 +1,58 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="example-container mat-elevation-z8 ">
+  <mat-form-field>
+  <mat-label>Location and Subject Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Location or any subject">
+</mat-form-field>
+<mat-table [dataSource]="dataSource" matSort>
+
+
+  <!-- Postion column -->
+  <ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef > No. </mat-header-cell>
+    <mat-cell *matCellDef="let element, index as i "> {{i+1}} </mat-cell>
+  </ng-container>
+
+  <!-- Tuitionname Column -->
+  <ng-container matColumnDef="Tuitionname">
+    <mat-header-cell *matHeaderCellDef > Tuition Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Tuitionname}} </mat-cell>
+  </ng-container>
+
+  <!-- location Column -->
+  <ng-container matColumnDef="location">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Location </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.location}} </mat-cell>
+  </ng-container>
+
+  <!-- subject Column -->
+  <ng-container matColumnDef="subject">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Subject </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.subject}} </mat-cell>
+  </ng-container>
+
+  <!-- fee Column -->
+  <ng-container matColumnDef="fee">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Fee </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.fee}} </mat-cell>
+  </ng-container>
+
+  <!-- wniquecode Column -->
+  <ng-container matColumnDef="uniquecode">
+    <mat-header-cell *matHeaderCellDef> UniqueCode </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.uniquecode}} </mat-cell>
+  </ng-container>
+
+  <!-- Enroll  Column -->
+  <ng-container matColumnDef="enrollhere">
+    <mat-header-cell *matHeaderCellDef> Enrollhere </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary"  class="btn btn-success" (click)="enrollhere(element)" >Enroll here</button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<mat-paginator [length]="totalSubject" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"*ngIf="subject.length > 0" showFirstLastButtons></mat-paginator>
+</div>

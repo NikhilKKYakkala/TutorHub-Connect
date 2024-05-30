@@ -1,0 +1,49 @@
+body{
+  background-image:url("../land.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 91.5vh;
+  /* opacity: 90%; */
+
+}
+
+.jumbotron{
+   opacity: .7;
+   /* filter: alpha(opacity=70); */
+   font-weight: bolder;
+   /* height: 700px; */
+   align-content: center;
+   align-items: center;
+   text-align: center;
+   height: 86vh;
+
+}
+
+p{
+  padding-top: 70px;
+  color: black;
+  font-size: 30px;
+  word-spacing: 2px;
+}
+
+.tuition{
+padding-top: 30px;
+font-weight: 400;
+font-size: 25px;
+}
+
+h1{
+  padding-bottom: 30px;
+  font-weight: 500;
+  font-size: 60px;
+}
+
+h2{
+  font-size: 20px;
+  text-align: left;
+}
+
+h3{
+  font-size: 18px;
+  text-align: left;
+}

@@ -1,0 +1,18 @@
+<div class="row" >
+  <div class="col-sm-6 w-250" *ngFor="let tuition of institute"  >
+    <div class="card border-dark">
+      <h1 class="card-header"><img [src]=" tuition.ImagePath"  alt="tuition" height=60px /><br>{{ tuition.title }}</h1>
+      <div class="card-body">
+        <p class="title">
+         {{ tuition.content }}
+        </p>
+        <a [routerLink]="['/Tuition',tuition.id]" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+
+
+

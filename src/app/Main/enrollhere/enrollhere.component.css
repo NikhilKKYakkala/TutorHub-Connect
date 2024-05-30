@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+.mat-form-field {
+  padding-left: 20px;
+  font-size: 14px;
+  width: 40%;
+}
